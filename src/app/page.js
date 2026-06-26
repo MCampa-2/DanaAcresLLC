@@ -3,6 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCube, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-cube";
+
 import { FaBirthdayCake, FaHeart, FaLeaf, FaFacebookF } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaSchool } from "react-icons/fa";
@@ -10,6 +16,31 @@ import { GiDiamondRing, GiGoat } from "react-icons/gi";
 import { MdFestival } from "react-icons/md";
 
 export default function Home() {
+
+
+ const heroImages = [
+  "/images/dana.jpeg",
+  "/images/owners.jpeg",
+  "/images/hero.jpeg",
+]; 
+
+  const animalImages = [
+    "/images/hero.jpeg",
+    "/images/animal1.jpeg",
+    "/images/animal2.jpeg",
+    "/images/animal3.jpeg",
+    "/images/animal4.jpeg",
+    "/images/animal5.jpeg",
+    "/images/animal6.jpeg",
+    "/images/animal7.jpeg",
+    "/images/animal8.jpeg",
+    "/images/animal9.jpeg",
+    "/images/animal10.jpeg",
+    "/images/animal11.jpeg",
+    "/images/animal12.jpeg",
+    "/images/eggs.jpeg"
+  ];
+
   return (
     <main className="bg-porcelain text-carbon-black">
       {/* NAVBAR */}
@@ -21,7 +52,7 @@ export default function Home() {
               alt="Dana Acres Logo"
               width={170}
               height={70}
-              className="h-auto"
+              className="h-auto w-auto"
               priority
             />
           </Link>
@@ -92,18 +123,42 @@ export default function Home() {
             </div>
           </div>
 
-        <div className="relative bg-beige rounded-[2rem] p-4 shadow-xl">
-        <div className="relative w-full h-[360px] md:h-[500px] rounded-[1.5rem] overflow-hidden shadow-2xl">
-          <Image
-            src="/images/hero.jpeg"
-            alt="Children petting farm animals at Dana Acres"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-       </div> 
+          <div className="relative bg-beige rounded-[2rem] p-4 shadow-xl">
+            <div className="relative w-full h-[360px] md:h-[500px] rounded-[1.5rem] overflow-hidden shadow-2xl">
+            <Swiper
+            modules={[EffectCube, Autoplay]}
+            effect="cube"
+            grabCursor={true}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            className="w-full h-full rounded-[1.5rem]"
+          >
+              {heroImages.map((src, index) => (
+                <SwiperSlide key={src}>
+                  <div className="relative w-full h-[360px] md:h-[500px]">
+                    <Image
+                      src={src}
+                      alt={`Dana Acres ${index + 1}`}
+                      fill
+                      priority={index === 0}
+                      sizes="(max-width:768px)100vw,50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -169,30 +224,39 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="overflow-hidden rounded-3xl shadow-sm">
-              <img
-                src="/images/animal1.jpeg"
-                alt="Dana Acres animal"
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl shadow-sm">
-              <img
-                src="/images/animal2.jpeg"
-                alt="Dana Acres animal"
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl shadow-sm">
-              <img
-                src="/images/animal3.jpeg"
-                alt="Dana Acres animal"
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
+          {/* CUBE PHOTO ROLL */}
+          <div className="max-w-3xl mx-auto">
+            <Swiper
+              modules={[EffectCube, Autoplay]}
+              effect="cube"
+              grabCursor={true}
+              loop={true}
+              autoplay={{
+                delay: 2600,
+                disableOnInteraction: false,
+              }}
+              cubeEffect={{
+                shadow: false,
+                slideShadows: false,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+              }}
+              className="rounded-3xl"
+            >
+              {animalImages.map((src, index) => (
+                <SwiperSlide key={src}>
+                  <div className="relative w-full h-[360px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl bg-beige">
+                    <Image
+                      src={src}
+                      alt={`Dana Acres animal ${index + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-contain bg-beige"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           <div className="mt-12 text-center">
@@ -301,7 +365,7 @@ export default function Home() {
               alt="Dana Acres Logo"
               width={150}
               height={60}
-              className="mb-5"
+              className="mb-5 h-auto"
             />
 
             <p className="text-porcelain/70 leading-relaxed max-w-sm">

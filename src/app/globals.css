@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-porcelain: #F7F7F2;
-  --color-beige: #E4E6C3;
-  --color-palm-leaf: #899878;
-  --color-carbon-black: #222725;
-  --color-onyx: #121113;
+  --color-porcelain: #fffafa;      /* soft white */
+  --color-beige: #fde8ef;          /* light pink section bg */
+  --color-palm-leaf: #d86f95;      /* main pink */
+  --color-carbon-black: #2b2024;   /* dark text */
+  --color-onyx: #1f171a;           /* footer dark */
 }
