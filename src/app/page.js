@@ -44,50 +44,7 @@ export default function Home() {
   return (
     <main className="bg-porcelain text-carbon-black">
       {/* NAVBAR */}
-      <nav className="w-full bg-porcelain border-b border-beige sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.png"
-              alt="Dana Acres Logo"
-              width={170}
-              height={70}
-              className="h-auto w-auto"
-              priority
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-8 text-carbon-black text-sm font-medium">
-            <Link href="/" className="hover:text-palm-leaf transition">
-              Home
-            </Link>
-            <Link href="/animals" className="hover:text-palm-leaf transition">
-              Animals
-            </Link>
-            <Link href="/packages" className="hover:text-palm-leaf transition">
-              Packages
-            </Link>
-            <Link href="/about" className="hover:text-palm-leaf transition">
-              About
-            </Link>
-            <Link href="/booking" className="hover:text-palm-leaf transition">
-              Booking
-            </Link>
-            <Link href="/contact" className="hover:text-palm-leaf transition">
-              Contact
-            </Link>
-          </div>
-
-          <Link
-            href="/booking"
-            className="hidden md:inline-block bg-palm-leaf text-porcelain px-6 py-3 rounded-md text-sm font-semibold hover:bg-carbon-black transition"
-          >
-            Book Now
-          </Link>
-
-          <button className="md:hidden text-carbon-black text-3xl">☰</button>
-        </div>
-      </nav>
+     
 
       {/* HERO */}
       <section className="bg-porcelain">
@@ -102,8 +59,9 @@ export default function Home() {
             </h1>
 
             <p className="text-onyx/80 text-lg leading-relaxed mb-8 max-w-xl">
-              Friendly animals, memorable experiences, and family-friendly fun
-              for birthdays, schools, weddings, parties, and special events.
+              Bring friendly miniature cows and goats to your next birthday party,
+              school event, wedding, festival, or special occasion. Dana Acres creates
+              memorable, hands-on experiences for guests of all ages.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -171,12 +129,12 @@ export default function Home() {
             </p>
 
             <h2 className="text-4xl md:text-5xl font-bold text-carbon-black mt-4 leading-tight">
-              Creating unforgettable memories for every occasion.
+              Mini Cow & Goat Experiences
             </h2>
 
             <p className="mt-6 text-lg text-onyx/80 leading-relaxed">
-              Our friendly animals create experiences that children and adults
-              will remember long after the event is over.
+              Dana Acres brings friendly miniature cows or goats directly to your
+              birthday party, wedding, school, festival, or special event.
             </p>
           </div>
 
@@ -214,7 +172,7 @@ export default function Home() {
               </p>
 
               <h2 className="text-4xl md:text-5xl font-bold text-carbon-black mt-4">
-                Friendly faces your guests will love.
+                Meet our miniature cows and friendly goats.
               </h2>
             </div>
 
@@ -279,7 +237,7 @@ export default function Home() {
             </p>
 
             <h2 className="text-4xl md:text-5xl font-bold text-carbon-black mt-4">
-              More than just a petting zoo.
+              Why families choose Dana Acres.
             </h2>
 
             <p className="mt-6 max-w-3xl mx-auto text-lg text-onyx/80 leading-relaxed">
@@ -316,15 +274,64 @@ export default function Home() {
 
             <div className="bg-porcelain rounded-2xl p-8 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <FaLeaf className="text-palm-leaf text-4xl mb-5" />
-              <h3 className="font-bold text-xl mb-3">Local & Reliable</h3>
+              <h3 className="font-bold text-xl mb-3">Travel Throughout Central Illinois</h3>
               <p className="text-onyx/75 leading-relaxed">
-                Proudly serving families and communities with dependable
-                service.
+                Serving Chebanse and surrounding communities.
+                Travel is available for events up to approximately
+                two hours away, with fuel surcharges applying
+                beyond 45 miles.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* BOOKING INFO */}
+<section className="bg-porcelain py-24 md:py-28">
+  <div className="max-w-6xl mx-auto px-6">
+
+    <div className="text-center mb-16">
+      <p className="text-palm-leaf font-semibold uppercase tracking-widest">
+        Booking Information
+      </p>
+
+      <h2 className="text-4xl md:text-5xl font-bold mt-4">
+        Everything you need to know.
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      <div className="bg-beige rounded-3xl p-8 shadow-sm">
+        <h3 className="text-2xl font-bold mb-6">
+          Pricing
+        </h3>
+
+        <ul className="space-y-4 text-lg">
+          <li>✓ Starting at <strong>$250 per hour</strong></li>
+          <li>✓ One-hour minimum booking</li>
+          <li>✓ Additional half-hour increments available</li>
+          <li>✓ Travel beyond 45 miles may include a fuel surcharge</li>
+        </ul>
+      </div>
+
+      <div className="bg-beige rounded-3xl p-8 shadow-sm">
+        <h3 className="text-2xl font-bold mb-6">
+          Reserving Your Date
+        </h3>
+
+        <ul className="space-y-4 text-lg">
+          <li>✓ Submit a booking request</li>
+          <li>✓ Dana Acres will confirm availability</li>
+          <li>✓ A $50 non-refundable deposit reserves your date</li>
+          <li>✓ Final details are confirmed before your event</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* CTA */}
       <section className="bg-palm-leaf py-24 md:py-28">
@@ -356,71 +363,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-onyx text-porcelain py-14">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-          <div>
-            <Image
-              src="/images/logo.png"
-              alt="Dana Acres Logo"
-              width={150}
-              height={60}
-              className="mb-5 h-auto"
-            />
-
-            <p className="text-porcelain/70 leading-relaxed max-w-sm">
-              Friendly farm experiences for birthdays, schools, weddings,
-              parties, and special events.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-
-            <div className="flex flex-col gap-3 text-porcelain/70">
-              <Link href="/" className="hover:text-porcelain transition">
-                Home
-              </Link>
-              <Link href="/animals" className="hover:text-porcelain transition">
-                Animals
-              </Link>
-              <Link
-                href="/packages"
-                className="hover:text-porcelain transition"
-              >
-                Packages
-              </Link>
-              <Link href="/booking" className="hover:text-porcelain transition">
-                Booking
-              </Link>
-              <Link href="/contact" className="hover:text-porcelain transition">
-                Contact
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-lg mb-4">Contact</h3>
-
-            <div className="flex flex-col gap-3 text-porcelain/70">
-              <p>Phone: Coming Soon</p>
-              <p>Email: Coming Soon</p>
-
-              <a
-                href="#"
-                className="flex items-center gap-3 hover:text-porcelain transition"
-              >
-                <FaFacebookF />
-                Facebook
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-porcelain/10 text-sm text-porcelain/50">
-          © 2026 Dana Acres LLC. All rights reserved.
-        </div>
-      </footer>
     </main>
   );
 }
