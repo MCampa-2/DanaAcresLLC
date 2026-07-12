@@ -21,11 +21,24 @@ import { MdFestival } from "react-icons/md";
 export default function Home() {
 
 
- const heroImages = [
+const heroImages = [
   "/images/dana.jpeg",
   "/images/owners.jpeg",
   "/images/hero.jpeg",
-]; 
+  "/images/animal1.jpeg",
+  "/images/animal2.jpeg",
+  "/images/animal3.jpeg",
+  "/images/animal4.jpeg",
+  "/images/animal5.jpeg",
+  "/images/animal6.jpeg",
+  "/images/animal7.jpeg",
+  "/images/animal8.jpeg",
+  "/images/animal9.jpeg",
+  "/images/animal10.jpeg",
+  "/images/animal11.jpeg",
+  "/images/animal12.jpeg",
+  "/images/eggs.jpeg"
+];
 
   const animalImages = [
     "/images/hero.jpeg",
@@ -43,6 +56,33 @@ export default function Home() {
     "/images/animal12.jpeg",
     "/images/eggs.jpeg"
   ];
+
+  const hazelImages = [
+    "/images/hazel/Hazel1.jpeg",
+    "/images/hazel/Hazel2.jpeg",
+    "/images/hazel/Hazel3.jpeg",
+    "/images/hazel/Hazel4.jpeg"
+  ]
+
+  const buttercupImages = [
+    "/images/buttercup/Buttercup1.jpeg",
+    "/images/buttercup/Buttercup2.jpeg",
+    "/images/buttercup/Buttercup3.jpeg",
+    "/images/buttercup/Buttercup4.jpeg"
+  ]
+
+  const sarahImages = [
+    "/images/sarah/sarah1.jpeg",
+    "/images/sarah/sarah2.jpeg",
+    "/images/sarah/sarah3.jpeg",
+    "/images/sarah/sarah4.jpeg"
+  ]
+
+  const latteImages = [
+    "/images/latte/latte1.jpeg",
+    "/images/latte/latte2.jpeg",
+    "/images/latte/latte3.jpeg"
+  ]
 
   return (
     <main className="bg-porcelain text-carbon-black">
@@ -277,12 +317,10 @@ export default function Home() {
 
             <div className="bg-porcelain rounded-2xl p-8 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <FaLeaf className="text-palm-leaf text-4xl mb-5" />
-              <h3 className="font-bold text-xl mb-3">Travel Throughout Central Illinois</h3>
+              <h3 className="font-bold text-xl mb-3">Travel throughout Northern/Central Illinois</h3>
               <p className="text-onyx/75 leading-relaxed">
-                Serving Chebanse and surrounding communities.
-                Travel is available for events up to approximately
-                two hours away, with fuel surcharges applying
-                beyond 45 miles.
+               Serving Kankakee/Iroquois/Will Counties and beyond! Travel is available for events up to 
+               approximately 75 miles from Clifton, IL with fuel surcharges applying beyond 45 miles.
               </p>
             </div>
           </div>
@@ -314,7 +352,7 @@ export default function Home() {
           <li>✓ Starting at <strong>$250 per hour</strong></li>
           <li>✓ One-hour minimum booking</li>
           <li>✓ Additional half-hour increments available</li>
-          <li>✓ Travel beyond 45 miles may include a fuel surcharge</li>
+          <li>✓ Travel beyond 45 miles will include a fuel surcharge</li>
         </ul>
       </div>
 

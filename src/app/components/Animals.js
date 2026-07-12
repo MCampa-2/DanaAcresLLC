@@ -5,22 +5,57 @@ import Link from "next/link";
 
 export default function Animals() {
   const animals = [
-    { src: "/images/animal1.jpeg", title: "Friendly Farm Animals" },
-    { src: "/images/animal2.jpeg", title: "Gentle Companions" },
-    { src: "/images/animal3.jpeg", title: "Event Favorites" },
-    { src: "/images/animal4.jpeg", title: "Family-Friendly Fun" },
-    { src: "/images/animal5.jpeg", title: "Memorable Moments" },
-    { src: "/images/animal6.jpeg", title: "Hands-On Experiences" },
-    { src: "/images/animal7.jpeg", title: "Happy Animals" },
-    { src: "/images/animal8.jpeg", title: "Perfect for Events" },
-    { src: "/images/animal9.jpeg", title: "Farm Fun" },
-    { src: "/images/animal10.jpeg", title: "Dana Acres Favorites" },
-    { src: "/images/animal11.jpeg", title: "Special Guests" },
-    { src: "/images/animal12.jpeg", title: "Animal Encounters" },
+    {
+      name: "Sarah",
+      type: "Micro/Mini Highland Heifer",
+      description:
+        "Sarah is a micro/mini Highland Heifer. She is the star of any event! She is the most popular booking. She loves cuddles and will give kisses. She is very gentle and loves all the attention!",
+      images: [
+        "/images/sarah/sarah1.jpeg",
+        "/images/sarah/sarah2.jpeg",
+        "/images/sarah/sarah3.jpeg",
+        "/images/sarah/sarah4.jpeg",
+      ],
+    },
+    {
+      name: "Hazel",
+      type: "Nigerian Dwarf Doe",
+      description:
+        "Hazel is a Nigerian Dwarf doe. She is probably the sweetest girl in the barn! She loves animal crackers and booty scratches. Her best friend is Latte, who she has looked after since Latte was just a month old. Hazel will definitely bring smiles to everyone!",
+      images: [
+        "/images/hazel/Hazel1.jpeg",
+        "/images/hazel/Hazel2.jpeg",
+        "/images/hazel/Hazel3.jpeg",
+        "/images/hazel/Hazel4.jpeg",
+      ],
+    },
+    {
+      name: "Buttercup",
+      type: "Nigerian Dwarf Doe",
+      description:
+        "Buttercup is also a Nigerian Dwarf doe and the half sister to Hazel. Buttercup has quite the unique voice, and you can pick her out from across the pasture by her unique “baaaa!” Buttercup is a seasoned pro at events. She loves cuddles and animal crackers too!",
+      images: [
+        "/images/buttercup/Buttercup1.jpeg",
+        "/images/buttercup/Buttercup2.jpeg",
+        "/images/buttercup/Buttercup3.jpeg",
+      ],
+    },
+    {
+      name: "Latte",
+      type: "Nigerian Dwarf Doe",
+      description:
+        "Latte is the youngest Nigerian Dwarf at Dana Acres. She loves her big sister Hazel. Latte is on the smaller side because she was a bottle baby. Her favorite thing to do is cuddle up in your lap and take a nap. She is quite the cuddle bug!",
+      images: [
+        "/images/latte/latte1.jpeg",
+        "/images/latte/latte2.jpeg",
+        "/images/latte/latte3.jpeg",
+      ],
+    },
   ];
 
   return (
     <main className="bg-porcelain text-carbon-black">
+      {/* HERO */}
       <section className="bg-beige py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-palm-leaf font-semibold uppercase tracking-widest mb-4">
@@ -28,54 +63,113 @@ export default function Animals() {
           </p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Friendly faces your guests will love.
+            Meet the friendly faces of Dana Acres.
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg text-onyx/80 leading-relaxed">
-            Dana Acres brings friendly farm animals to birthdays, schools,
-            weddings, festivals, and special events.
+            Each animal has a unique personality and brings something special
+            to every event. Meet the miniature cows and goats that make Dana
+            Acres such a memorable experience.
           </p>
         </div>
       </section>
 
-      <section className="bg-porcelain py-24">
-        <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {animals.map((animal) => (
-            <div
-              key={animal.src}
-              className="bg-beige rounded-3xl overflow-hidden shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+      {/* ANIMAL PROFILES */}
+      <section className="bg-porcelain py-24 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 space-y-24">
+          {animals.map((animal, animalIndex) => (
+            <article
+              key={animal.name}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
             >
-              <div className="relative w-full h-80">
-                <Image
-                  src={animal.src}
-                  alt={animal.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
+              {/* IMAGE GALLERY */}
+              <div
+                className={
+                  animalIndex % 2 !== 0 ? "lg:order-2" : "lg:order-1"
+                }
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  {animal.images.map((src, imageIndex) => (
+                    <div
+                      key={`${animal.name}-${src}-${imageIndex}`}
+                      className={`relative overflow-hidden rounded-3xl bg-beige shadow-sm ${
+                        imageIndex === 0
+                          ? "col-span-2 h-[340px] md:h-[440px]"
+                          : "h-[190px] md:h-[240px]"
+                      }`}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${animal.name} at Dana Acres`}
+                        fill
+                        sizes={
+                          imageIndex === 0
+                            ? "(max-width: 1024px) 100vw, 50vw"
+                            : "(max-width: 768px) 50vw, 25vw"
+                        }
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold">{animal.title}</h3>
-                <p className="text-onyx/75 mt-3 leading-relaxed">
-                  A sweet addition to parties, school visits, and special
-                  events.
+              {/* ANIMAL INFORMATION */}
+              <div
+                className={
+                  animalIndex % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                }
+              >
+                <p className="text-palm-leaf font-semibold uppercase tracking-widest">
+                  {animal.type}
                 </p>
+
+                <h2 className="text-4xl md:text-5xl font-bold mt-3">
+                  {animal.name}
+                </h2>
+
+                <div className="w-16 h-1 bg-palm-leaf rounded-full my-6" />
+
+                <p className="text-onyx/80 text-lg leading-relaxed">
+                  {animal.description}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                  <Link
+                    href="/booking"
+                    className="bg-palm-leaf text-porcelain px-7 py-3 rounded-md font-semibold text-center hover:bg-carbon-black transition"
+                  >
+                    Book {animal.name}
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    className="border border-palm-leaf text-palm-leaf px-7 py-3 rounded-md font-semibold text-center hover:bg-beige transition"
+                  >
+                    Ask About {animal.name}
+                  </Link>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
+      {/* BOOKING CTA */}
       <section className="bg-palm-leaf py-24">
         <div className="max-w-5xl mx-auto text-center px-6">
+          <p className="text-porcelain/80 font-semibold uppercase tracking-widest mb-4">
+            Bring The Farm To You
+          </p>
+
           <h2 className="text-4xl md:text-5xl font-bold text-porcelain">
             Want to meet them in person?
           </h2>
 
-          <p className="text-porcelain/85 mt-6 text-lg">
-            Bring Dana Acres to your next event and create memories your guests
-            will never forget.
+          <p className="text-porcelain/85 mt-6 text-lg leading-relaxed max-w-3xl mx-auto">
+            Bring Dana Acres to your next birthday, school visit, wedding,
+            festival, or special event and create memories your guests will
+            never forget.
           </p>
 
           <Link
@@ -89,3 +183,4 @@ export default function Animals() {
     </main>
   );
 }
+

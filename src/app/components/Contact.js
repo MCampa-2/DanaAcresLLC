@@ -71,7 +71,7 @@ export default function Contact() {
             <div className="space-y-5 text-lg text-onyx/80">
               <p>
                 <span className="font-semibold text-carbon-black">Phone:</span>{" "}
-                815-790-7012
+                815-791-7012
               </p>
 
               <p>
@@ -83,9 +83,7 @@ export default function Contact() {
                 <span className="font-semibold text-carbon-black">
                   Service Area:
                 </span>{" "}
-                Based near Chebanse, Illinois. Dana Acres travels up to
-                approximately two hours from 60927. Events outside a 45-mile
-                radius may include a fuel surcharge.
+                Based in Clifton, IL
               </p>
 
               <a

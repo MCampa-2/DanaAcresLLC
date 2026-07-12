@@ -82,7 +82,7 @@ export function Footer() {
                 href="tel:8157907012"
                 className="hover:text-porcelain transition"
               >
-                (815) 790-7012
+                815-791-7012
               </a>
             </p>
 
