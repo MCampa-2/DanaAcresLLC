@@ -100,7 +100,7 @@ export function Footer() {
               <span className="font-semibold text-porcelain">
                 Service Area:
               </span>{" "}
-              Based near Chebanse, IL
+              Based in Chebanse, IL
             </p>
 
             <a
