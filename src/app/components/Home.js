@@ -84,6 +84,13 @@ const heroImages = [
     "/images/latte/latte3.jpeg"
   ]
 
+  const annabelle = [
+    "/images/annabelle/annabelle1.jpeg",
+    "/images/annabelle/annabelle2.jpeg",
+    "/images/annabelle/annabelle3.jpeg",
+    "/images/annabelle/annabelle4.jpeg"
+  ]
+
   return (
     <main className="bg-porcelain text-carbon-black">
       {/* NAVBAR */}

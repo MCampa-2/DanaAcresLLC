@@ -51,6 +51,17 @@ export default function Animals() {
         "/images/latte/latte3.jpeg",
       ],
     },
+    {
+      name: "Annabelle",
+      type: "Annabelle is a micro/mini Highland Heifer",
+      description: "Fun fact! She is a half sister to Sarah. They share the same dad! Annabelle is the newest addition to Dana Acres and is a little lazier than her big sister Sarah. If you are looking for a laid back girl who will gladly pose for pictures this would be a great pick for your next event!",
+      images: [
+        "/images/annabelle/annabelle1.jpeg",
+        "/images/annabelle/annabelle2.jpeg",
+        "/images/annabelle/annabelle3.jpeg",
+        "/images/annabelle/annabelle4.jpeg"
+      ],
+    },
   ];
 
   return (
