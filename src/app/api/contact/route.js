@@ -10,7 +10,7 @@ export async function POST(request) {
 
     const { data, error } = await resend.emails.send({
       from: "Dana Acres Website <website@danaacresllc.com>",
-      to: [process.env.CONTACT_RECIPIENT_EMAIL],
+      to: process.env.CONTACT_RECIPIENT_EMAIL,
       replyTo: email,
       subject: "New Contact Message - Dana Acres",
       html: `
