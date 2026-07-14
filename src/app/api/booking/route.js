@@ -17,7 +17,7 @@ export async function POST(request) {
     } = body;
 
     const { data, error } = await resend.emails.send({
-      from: "Dana Acres Website <onboarding@resend.dev>",
+      from: "Dana Acres Website <website@danaacresllc.com>",
       to: [process.env.CONTACT_RECIPIENT_EMAIL],
       replyTo: email,
       subject: "New Booking Request - Dana Acres",
